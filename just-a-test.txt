@@ -1,0 +1,50 @@
+# rpi-dev-n0 (master)
+docker run -rm swarm create
+## 29b7ca6bbe59ca0758ecfeec772bcac3
+
+docker run -d -p 2375:2375 swarm manage token://29b7ca6bbe59ca0758ecfeec772bcac3
+
+docker run -d swarm join --addr=10.10.150.161:2375 token://29b7ca6bbe59ca0758ecfeec772bcac3
+docker run -d swarm join --addr=10.10.150.162:2375 token://29b7ca6bbe59ca0758ecfeec772bcac3
+#docker run -d swarm join --addr=10.10.150.163:2375 token://f38e2bdf59dcf6bce1e94372c3cbe81b
+#docker run -d arm-swarm join --addr=10.10.150.164:2375 token://866c0548709f1497aa21d92c96f3ba83
+
+export DOCKER_HOST=10.10.150.160:2375
+
+
+
+
+#root@node1:$> ./swarm create
+#256306bca12a54833b32569162db184e
+root@node1:$> ./swarm join --discovery token://256306bca12a54833b32569162db184e --addr=node1.ip.address:2375
+root@node2:$> ./swarm join --discovery token://256306bca12a54833b32569162db184e --addr=node2.ip.address:2375
+manuel@laptop:$> ./swarm manage --discovery token://256306bca12a54833b32569162db184e -H=127.0.0.1:2375
+
+
+
+
+
+
+
+
+
+
+
+docker run --rm swarm list t--addr=10.10.150.160:2375 token://866c0548709f1497aa21d92c96f3ba83
+
+# rpi-dev-n1 (not the master)
+#docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
+
+
+
+
+
+
+docker -H tcp://10.10.150.160:2375 info
+
+
+####
+
+systemctl stop docker
+echo DOCKER_OPTS=\"-H 0.0.0.0:2375 -H unix://var/run/docker.sock\" >> /etc/default/docker
+systemctl start docker
