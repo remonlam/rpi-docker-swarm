@@ -1,4 +1,6 @@
-## Start a ssh session on each of the nodes
+## Start a ssh session on each of the nodes  ¯\_(ツ)_/¯
+systemctl start docker && docker pull hypriot/rpi-swarm && docker tag hypriot/rpi-swarm swarm && systemctl stop docker
+
 systemctl stop docker
 docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
 
@@ -23,4 +25,4 @@ docker -H tcp://192.168.0.130:2376 info
 
 ####
 
-docker run --rm swarm list t--addr=192.168.0.131:2376 token://8b09ddc3f476929db8294243cdb69ee0
+docker run --rm swarm list token://8b09ddc3f476929db8294243cdb69ee0

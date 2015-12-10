@@ -1,17 +1,25 @@
 # rpi-dev-n0 (master)
-docker run -rm swarm create
-## 29b7ca6bbe59ca0758ecfeec772bcac3
+docker run --rm swarm create
+## 3b9499e9601c03e3d073f0877f51fde6
 
-docker run -d -p 2375:2375 swarm manage token://29b7ca6bbe59ca0758ecfeec772bcac3
+docker run -d -p 2378:2375 swarm manage token://3b9499e9601c03e3d073f0877f51fde6
 
-docker run -d swarm join --addr=10.10.150.161:2375 token://29b7ca6bbe59ca0758ecfeec772bcac3
-docker run -d swarm join --addr=10.10.150.162:2375 token://29b7ca6bbe59ca0758ecfeec772bcac3
-#docker run -d swarm join --addr=10.10.150.163:2375 token://f38e2bdf59dcf6bce1e94372c3cbe81b
-#docker run -d arm-swarm join --addr=10.10.150.164:2375 token://866c0548709f1497aa21d92c96f3ba83
+docker run -d swarm join --addr=192.168.0.128:2377 token://3b9499e9601c03e3d073f0877f51fde6
+docker run -d swarm join --addr=192.168.0.131:2377 token://3b9499e9601c03e3d073f0877f51fde6
+docker run -d swarm join --addr=192.168.0.130:2377 token://3b9499e9601c03e3d073f0877f51fde6
+#docker run -d swarm join --addr=10.10.150.163:2375 token://04bc68fa2c1cd66ba3a826a20f731521
+#docker run -d arm-swarm join --addr=10.10.150.164:2375 token://04bc68fa2c1cd66ba3a826a20f731521
 
-export DOCKER_HOST=10.10.150.160:2375
+
+docker run -d swarm join --addr=10.10.150.160:2375 token://f85506b20476ff4e3a6467b604fee0dc
+docker run -d swarm join --addr=10.10.150.161:2375 token://f85506b20476ff4e3a6467b604fee0dc
 
 
+
+export DOCKER_HOST=192.168.0.128:2378
+
+
+docker run swarm list token://8d2fd9b287134e729004941ff27c58f0
 
 
 #root@node1:$> ./swarm create
@@ -24,7 +32,7 @@ manuel@laptop:$> ./swarm manage --discovery token://256306bca12a54833b32569162db
 
 
 
-
+swarm manage -H tcp://<swarm_ip:swarm_port> token://
 
 
 
@@ -40,7 +48,7 @@ docker run --rm swarm list t--addr=10.10.150.160:2375 token://866c0548709f1497aa
 
 
 
-docker -H tcp://10.10.150.160:2375 info
+docker -H tcp://192.168.0.128:2378 info
 
 
 ####
