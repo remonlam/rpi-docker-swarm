@@ -2,10 +2,10 @@
 docker run --rm swarm create
 ## 3b9499e9601c03e3d073f0877f51fde6
 
-docker run -d -p 2378:2375 swarm manage token://3b9499e9601c03e3d073f0877f51fde6
+docker run -d -p 2376:2375 swarm manage token://27c65721e4e3d4f381068a5f5e0744c0
 
-docker run -d swarm join --addr=192.168.0.128:2377 token://3b9499e9601c03e3d073f0877f51fde6
-docker run -d swarm join --addr=192.168.0.131:2377 token://3b9499e9601c03e3d073f0877f51fde6
+docker run -d swarm join --addr=10.10.40.27:2375 token://27c65721e4e3d4f381068a5f5e0744c0
+docker run -d swarm join --addr=10.10.40.28:2375 token://27c65721e4e3d4f381068a5f5e0744c0
 docker run -d swarm join --addr=192.168.0.130:2377 token://3b9499e9601c03e3d073f0877f51fde6
 #docker run -d swarm join --addr=10.10.150.163:2375 token://04bc68fa2c1cd66ba3a826a20f731521
 #docker run -d arm-swarm join --addr=10.10.150.164:2375 token://04bc68fa2c1cd66ba3a826a20f731521
