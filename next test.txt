@@ -10,13 +10,13 @@ docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
 # First docker swarm node + manager
 docker run --rm swarm create
 #<TOKEN-ID>
-docker run -d -p 2376:2375 swarm manage token://8b09ddc3f476929db8294243cdb69ee0
-docker run -d swarm join --addr=192.168.0.131:2375 token://8b09ddc3f476929db8294243cdb69ee0
+docker run -d -p 2376:2375 swarm manage token://dbd0fa9f1b524799e59259de4ed5f8cf
+docker run -d swarm join --addr=192.168.0.128:2375 token://dbd0fa9f1b524799e59259de4ed5f8cf
 docker -H tcp://0.0.0.0:2375 info
-docker -H tcp://192.168.0.131:2376 info
+docker -H tcp://192.168.0.129:2376 info
 
 # Second docker swarm node
-docker run -d swarm join --addr=192.168.0.130:2375 token://8b09ddc3f476929db8294243cdb69ee0
+docker run -d swarm join --addr=192.168.0.129:2375 token://dbd0fa9f1b524799e59259de4ed5f8cf
 docker -H tcp://0.0.0.0:2375 info
 docker -H tcp://10.10.150.160:2376 info
 docker -H tcp://192.168.0.130:2376 info
@@ -25,4 +25,12 @@ docker -H tcp://192.168.0.130:2376 info
 
 ####
 
+<<<<<<< Updated upstream
 docker run --rm swarm list token://8b09ddc3f476929db8294243cdb69ee0
+=======
+<<<<<<< HEAD
+docker run --rm swarm list t--addr=192.168.0.131:2376 token://dbd0fa9f1b524799e59259de4ed5f8cf
+=======
+docker run --rm swarm list token://8b09ddc3f476929db8294243cdb69ee0
+>>>>>>> origin/master
+>>>>>>> Stashed changes
