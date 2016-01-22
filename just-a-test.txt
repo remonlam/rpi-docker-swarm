@@ -31,13 +31,19 @@ manuel@laptop:$> ./swarm manage --discovery token://256306bca12a54833b32569162db
 
 
 
+<<<<<<< HEAD
+=======
 
 swarm manage -H tcp://<swarm_ip:swarm_port> token://
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
 
 
-
+>>>>>>> origin/master
 docker run --rm swarm list t--addr=10.10.150.160:2375 token://866c0548709f1497aa21d92c96f3ba83
 
 # rpi-dev-n1 (not the master)
@@ -45,10 +51,17 @@ docker run --rm swarm list t--addr=10.10.150.160:2375 token://866c0548709f1497aa
 
 
 
+<<<<<<< HEAD
+docker -H tcp://0.0.0.0:2375 info
+=======
 
 
 
 docker -H tcp://192.168.0.128:2378 info
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 
 
 ####
